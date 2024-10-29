@@ -61,7 +61,7 @@ https://drive.google.com/file/d/1ayk6NXURI_vIPlym16f_RG3ffxBWHxvb/view
 ```
 sudo apt -y install gcc-9 g++-9
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
-sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9
+sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 9
 sudo update-alternatives --config gcc   # 이후 나오는 화면에서 gcc-9에 해당하는 selection 번호 입력
 sudo update-alternatives --config g++   # 이후 나오는 화면에서 g++-9에 해당하는 selection 번호 입력
 ```
