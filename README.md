@@ -3,7 +3,7 @@
 this repogetory is list of Pixel aligend VLM.
 
 1. Openseg
-2. Lseg (Todo)
+2. Lseg
 3. CLIP + SAM (Todo)
 
 ## Openseg
