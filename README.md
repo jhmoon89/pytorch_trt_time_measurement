@@ -125,3 +125,4 @@ Lseg model (Resnet): 21.677ms
 ```
 python lseg_zs_practice.py
 ```
+설치가 안된 패키지가 있으면 pip로 설치하고 실행하면 된다.
