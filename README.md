@@ -57,7 +57,7 @@ https://drive.google.com/file/d/1ayk6NXURI_vIPlym16f_RG3ffxBWHxvb/view
 ```
 
 
-- gcc 9버전, cuda 11.3 환경 준비 (cuda 설치 화면에서 오직 cuda 만 설치할 것. 그래야 22.04환경에서도 사용 가능)
+- Set up an environment with GCC 9 and CUDA 11.3 (install only CUDA during the CUDA setup for compatibility with Ubuntu 22.04):
 ```
 sudo apt -y install gcc-9 g++-9
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 9
@@ -70,7 +70,7 @@ wget https://developer.download.nvidia.com/compute/cuda/11.3.0/local_installers/
 sudo sh cuda_11.3.0_465.19.01_linux.run
 export PATH="/usr/local/cuda-11.3/bin:$PATH" && export LD_LIBRARY_PATH="/usr/local/cuda-11.3/lib64:$LD_LIBRARY_PATH"
 ```
-- Lseg 환경 설치
+- Set up the Lseg environment:
 ```
 cd Lseg
 conda create -n lseg python=3.8
@@ -86,15 +86,14 @@ pip install torchmetrics==0.6.0
 pip install setuptools==59.5.0
 pip install imageio matplotlib pandas six
 ```
-만약 오류가 발생하는 경우 pytorch_lightning이 설치되면서 torch가 최신버전으로 다시 설치되었을 수 있음
-torch를 1.9.1로 다시 설치하고 PyTorch-Encoding 설치
+If errors occur, PyTorch might have been reinstalled with a different version by pytorch_lightning. Reinstall torch==1.9.1 and PyTorch-Encoding.
 
-- ade20k 데이터셋 설치
+- Download the ADE20K dataset:
 ```
 python prepare_ade20k.py
 unzip ../datasets/ADEChallengeData2016.zip
 ```
-설혹 ade20k을 사용하지 않더라도 작동을 위해서는 받아야 함.
+The ADE20K dataset is required for operation even if you do not plan to use it directly.
 
 
 ### run
@@ -115,3 +114,17 @@ This implementation is based on [lseg_feature_extraction](https://github.com/pen
 
 update later
 
+
+## Pytorch model Time Measurement (mean of 1000 iterations)
+
+-CLIP model: 15.050ms
+
+-Lseg model (Vit): 63.520ms
+
+-Lseg model (Resnet): 21.677ms
+
+### run
+```
+python lseg_zs_practice.py
+```
+Install any missing packages with pip as they appear during execution.
