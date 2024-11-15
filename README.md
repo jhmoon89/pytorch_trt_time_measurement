@@ -117,9 +117,11 @@ update later
 
 ## Pytorch model Time Measurement (mean of 1000 iterations)
 
-CLIP model: 15.050ms
-Lseg model (Vit): 63.520ms
-Lseg model (Resnet): 21.677ms
+-CLIP model: 15.050ms
+
+-Lseg model (Vit): 63.520ms
+
+-Lseg model (Resnet): 21.677ms
 
 ### run
 ```
