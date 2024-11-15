@@ -41,20 +41,15 @@ dummy_input = dummy_input.to(device)
 #     if param.dtype == torch.int64:
 #         param.data = param.data.to(torch.int32)
 #################################################################
-# Measure mean processing times
-num_iterations = 1000
-
-# torch.cuda.empty_cache()
-start_time = time.time()
-
-with torch.no_grad():
-    for _ in tqdm(range(num_iterations), desc="Running model"):
-        output = model(dummy_input)
-
-end_time = time.time()
-average_time = (end_time - start_time) / num_iterations
-
-print(f'Memory allocated: {torch.cuda.memory_allocated() / (1024 ** 2)} MB')
-print(f'Memory reserved: {torch.cuda.memory_reserved() / (1024 ** 2)} MB')
-print(f'Average inference time over {num_iterations} iterations: {average_time:.6f} seconds')
-#################################################################
+# export to onnx
+torch.onnx.export(
+    model,
+    dummy_input,
+    "lseg_model_241115.onnx",
+    export_params=True,
+    opset_version=13,  # or higher
+    do_constant_folding=True,  # Try turning this off if it's causing issues
+    input_names=['input'],
+    output_names=['output'],
+    dynamic_axes={'input': {0: 'batch_size'}, 'output': {0: 'batch_size'}}
+)
