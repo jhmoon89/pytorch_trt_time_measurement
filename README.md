@@ -115,6 +115,7 @@ This implementation is based on [lseg_feature_extraction](https://github.com/pen
 
 update later
 
+
 ### Pytorch model Time Measurement (mean of 1000 iterations)
 
 CLIP model: 15.050ms
