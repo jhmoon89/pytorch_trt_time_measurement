@@ -120,3 +120,8 @@ update later
 CLIP model: 15.050ms
 Lseg model (Vit): 63.520ms
 Lseg model (Resnet): 21.677ms
+
+### run
+```
+python lseg_zs_practice.py
+```
