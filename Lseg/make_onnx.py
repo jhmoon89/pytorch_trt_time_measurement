@@ -27,6 +27,8 @@ model = LSegRN_img_only(
     arch_option=0
 )
 
+model.load(path='./Lseg/checkpoints/demo_e200.ckpt')
+
 # eval mode
 model.eval()
 
@@ -45,7 +47,7 @@ dummy_input = dummy_input.to(device)
 torch.onnx.export(
     model,
     dummy_input,
-    "lseg_model_241115.onnx",
+    "lseg_model_241116.onnx",
     export_params=True,
     opset_version=13,  # or higher
     do_constant_folding=True,  # Try turning this off if it's causing issues
