@@ -84,12 +84,13 @@ class BaseModel(torch.nn.Module):
         Args:
             path (str): file path
         """
-        parameters = torch.load(path, map_location=torch.device("cpu"))
+        # parameters = torch.load(path, map_location=torch.device("cpu"))
+        parameters = torch.load(path, map_location=torch.device("cuda"))
 
         if "optimizer" in parameters:
             parameters = parameters["model"]
 
-        self.load_state_dict(parameters)
+        self.load_state_dict(parameters, strict=False)
 
 
 def _make_fusion_block(features, use_bn):

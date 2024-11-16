@@ -27,10 +27,12 @@ model = LSegRN_img_only(
     arch_option=0
 )
 
-# 모델을 평가 모드로 설정
+model.load(path='./Lseg/checkpoints/demo_e200.ckpt')
+
+# eval mode
 model.eval()
 
-# 더미 입력 텐서 정의 (모델 입력 크기에 맞게 조정)
+# dummy input
 dummy_input = torch.randn(1, 3, 384, 384)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
