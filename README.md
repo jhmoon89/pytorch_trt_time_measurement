@@ -131,5 +131,6 @@ python lseg_zs_practice.py
 ```
 python make_onnx.py
 ```
+Currently onnx file is saved as "lseg_model.onnx".
 
 Install any missing packages with pip as they appear during execution.
