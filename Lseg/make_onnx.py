@@ -47,7 +47,7 @@ dummy_input = dummy_input.to(device)
 torch.onnx.export(
     model,
     dummy_input,
-    "lseg_model_241116.onnx",
+    "lseg_model.onnx",
     export_params=True,
     opset_version=13,  # or higher
     do_constant_folding=True,  # Try turning this off if it's causing issues
