@@ -121,7 +121,7 @@ update later
 
 -Lseg model (Vit): 63.520ms
 
--Lseg model (Resnet): 21.677ms
+-Lseg model (Resnet): 25.817ms
 
 ### For Time Measurement using pytorch model
 ```
