@@ -123,7 +123,7 @@ update later
 
 -Lseg model (Resnet): 21.677ms
 
-### For Time Measurement using pytorch model (.pt or .pth files)
+### For Time Measurement using pytorch model
 ```
 python lseg_zs_practice.py
 ```
