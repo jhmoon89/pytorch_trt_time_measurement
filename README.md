@@ -123,8 +123,13 @@ update later
 
 -Lseg model (Resnet): 21.677ms
 
-### run
+### For Time Measurement using pytorch model (.pt or .pth files)
 ```
 python lseg_zs_practice.py
 ```
+### For exporting onnx model
+```
+python make_onnx.py
+```
+
 Install any missing packages with pip as they appear during execution.
